@@ -1,6 +1,6 @@
 <!--
  * @Date: 2022-01-09 11:17:34
- * @LastEditTime: 2022-01-09 12:52:47
+ * @LastEditTime: 2022-01-09 12:57:15
  * @LastEditors: Li Xiang
  * @Description: 
  * @FilePath: \paper_notes\3d_object_detection.md
@@ -18,7 +18,7 @@ DETR3D: 3D Object Detection from Multi-view Images via 3D-to-2D Queries
 
 ![](images/2022-01-09-12-45-38.png)
 
-将DETR思想扩展到3D多相机视觉目标物检测任务。使用query产生object proposal，并转换为BEV中的3D point，再投影到像素坐标系中用以关联图像特征。最终生成bev中的检测结果。
+将DETR思想扩展到3D多相机视觉目标物检测任务，生成bev中的检测结果。使用query产生object proposal，并转换为BEV中的3D point，再投影到像素坐标系中用以关联图像特征。在nuscenes数据集上超过FCOS3D，达到sota。
 
 ## FCOS3D
 
