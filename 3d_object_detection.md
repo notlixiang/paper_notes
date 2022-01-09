@@ -1,6 +1,6 @@
 <!--
  * @Date: 2022-01-09 11:17:34
- * @LastEditTime: 2022-01-09 13:03:41
+ * @LastEditTime: 2022-01-09 21:22:18
  * @LastEditors: Li Xiang
  * @Description: 
  * @FilePath: \paper_notes\3d_object_detection.md
@@ -12,7 +12,7 @@
 
 DETR3D: 3D Object Detection from Multi-view Images via 3D-to-2D Queries
 
-[[paper](https://arxiv.org/abs/2110.06922)]
+[[abstract](https://arxiv.org/abs/2110.06922)]
 [[pdf](https://arxiv.org/pdf/2104.10956)]
 [[code](https://github.com/WangYueFt/detr3d)]
 
@@ -28,6 +28,6 @@ DETR3D: 3D Object Detection from Multi-view Images via 3D-to-2D Queries
 
 FCOS3D: Fully Convolutional One-Stage Monocular 3D Object Detection
 
-[[paper](https://arxiv.org/abs/2104.10956)]
+[[abstract](https://arxiv.org/abs/2104.10956)]
 [[pdf](https://arxiv.org/pdf/2104.10956)]
 [[code](https://github.com/open-mmlab/mmdetection3d/blob/master/configs/fcos3d/README.md)]
