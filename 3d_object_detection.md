@@ -1,12 +1,16 @@
 <!--
  * @Date: 2022-01-09 11:17:34
- * @LastEditTime: 2022-01-09 21:22:18
+ * @LastEditTime: 2022-01-09 22:15:35
  * @LastEditors: Li Xiang
  * @Description: 
  * @FilePath: \paper_notes\3d_object_detection.md
 -->
 
 # 3D目标物检测
+
+- [3D目标物检测](#3d目标物检测)
+  - [DETR3D](#detr3d)
+  - [FCOS3D](#fcos3d)
 
 ## DETR3D
 
