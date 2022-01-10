@@ -1,6 +1,6 @@
 <!--
  * @Date: 2022-01-09 11:17:34
- * @LastEditTime: 2022-01-10 22:35:40
+ * @LastEditTime: 2022-01-10 22:48:23
  * @LastEditors: Li Xiang
  * @Description: 
  * @FilePath: \paper_notes\2d_object_detection_and_image_classfication.md
@@ -21,7 +21,7 @@ Objects as Points
 [[pdf](https://arxiv.org/pdf/1904.07850)]
 [[code](https://github.com/xingyizhou/CenterNet)]
 
-一种无锚的目标物检测头设计，在heatmap上回归出有目标物的中心点落在各个像素上的置信度，通过heatmap上的局部极大值生成proposal，从而不需要对检测框做NMS后处理。
+一种无锚的目标物检测头设计，在heatmap上回归出有目标物中心点落在各个像素上的置信度，通过heatmap上的局部极大值生成proposal，从而不需要对检测框做NMS后处理。
 
 相比MaskRCNN，YOLOv3等算法，该方法在精度与速度上取得较好的均衡，并可扩充到人体姿态估计，自动驾驶的3D目标物检测等任务上。
 
