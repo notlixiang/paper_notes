@@ -1,6 +1,6 @@
 <!--
  * @Date: 2022-01-09 11:17:34
- * @LastEditTime: 2022-01-09 22:15:16
+ * @LastEditTime: 2022-01-10 22:29:42
  * @LastEditors: Li Xiang
  * @Description: 
  * @FilePath: \paper_notes\2d_object_detection_and_image_classfication.md
@@ -8,9 +8,28 @@
 # 2D目标物检测与图片分类
 
 - [2D目标物检测与图片分类](#2d目标物检测与图片分类)
+  - [CenterNet](#centernet)
   - [FCOS](#fcos)
   - [ViT](#vit)
   - [DETR](#detr)
+
+## CenterNet
+
+Objects as Points
+
+[[abstract](https://arxiv.org/abs/1904.07850)]
+[[pdf](https://arxiv.org/pdf/1904.07850)]
+[[code](https://github.com/xingyizhou/CenterNet)]
+
+![](images/2022-01-10-22-15-10.png)
+
+![](images/2022-01-10-22-22-13.png)
+
+一种无锚的目标物检测头设计，通过heatmap预测出有目标物中心点落在某像素区域的置信度，通过heatmap上的局部极大值生成proposal，从而不需要对检测框做NMS后处理。
+
+相比MaskRCNN，YOLOv3等算法，该方法在精度与速度上取得较好的均衡，并可扩充到人体姿态估计，自动驾驶的3D目标物检测等任务上。
+
+对于目标物中心点重叠，进而导致该方法失效的场景，经过统计，在COCO数据集中的出现概率小于0.1%，影响很轻微。
 
 ## FCOS
 
