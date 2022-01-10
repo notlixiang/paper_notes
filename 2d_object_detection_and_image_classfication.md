@@ -1,6 +1,6 @@
 <!--
  * @Date: 2022-01-09 11:17:34
- * @LastEditTime: 2022-01-10 22:32:34
+ * @LastEditTime: 2022-01-10 22:35:40
  * @LastEditors: Li Xiang
  * @Description: 
  * @FilePath: \paper_notes\2d_object_detection_and_image_classfication.md
@@ -28,6 +28,8 @@ Objects as Points
 对于目标物中心点重叠，进而导致该方法失效的场景，经过统计，在COCO数据集中的出现概率小于0.1%，影响很轻微。
 
 ![](images/2022-01-10-22-15-10.png)
+
+![](images/2022-01-10-22-35-38.png)
 
 ![](images/2022-01-10-22-22-13.png)
 
