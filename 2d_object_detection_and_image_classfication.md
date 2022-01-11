@@ -1,6 +1,6 @@
 <!--
  * @Date: 2022-01-09 11:17:34
- * @LastEditTime: 2022-01-10 22:48:23
+ * @LastEditTime: 2022-01-11 22:52:23
  * @LastEditors: Li Xiang
  * @Description: 
  * @FilePath: \paper_notes\2d_object_detection_and_image_classfication.md
@@ -10,6 +10,7 @@
 - [2D目标物检测与图片分类](#2d目标物检测与图片分类)
   - [CenterNet](#centernet)
   - [FCOS](#fcos)
+  - [ShuffleNet V2](#shufflenet-v2)
   - [ViT](#vit)
   - [DETR](#detr)
 
@@ -50,6 +51,22 @@ FCOS: Fully Convolutional One-Stage Object Detection
 ![](images/2022-01-09-21-11-31.png)
 
 ![](images/2022-01-09-21-05-21.png)
+
+## ShuffleNet V2
+
+ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design
+
+[[abstract](https://arxiv.org/abs/1807.11164)]
+[[pdf](https://arxiv.org/pdf/1807.11164)]
+[[code](https://github.com/pytorch/vision/blob/5a315453da/torchvision/models/shufflenetv2.py)]
+
+文章指出，FLOPS并不能完全衡量网络推理速度，数据IO时的内存访问成本(MAC, Memory Access Cost)也很影响推理效率。
+
+基于对MAC的分析，提出四个设计高效CNN的实用指导规则：卷积层相等的输入输出通道数量能最小化内存访问成本(卷积尽量不变换通道数)，组卷积分组过多会增加内存访问成本(合理分组卷积)，网络碎片化会降低并行度(网络分支别太多)，逐元素(relu,add,bias等)操作FLOP低却带来大量内存访问成本(规避element wise操作)。
+
+在以上规则指导下，通过通道分离只对一半的通道做卷积，再和未卷积的另一半concat后做channel shuffle，设计了新的网络结构，有准又快。
+
+![](images/2022-01-11-22-50-44.png)
 
 ## ViT
 
