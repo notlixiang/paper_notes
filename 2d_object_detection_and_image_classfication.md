@@ -1,6 +1,6 @@
 <!--
  * @Date: 2022-01-09 11:17:34
- * @LastEditTime: 2022-01-11 22:52:23
+ * @LastEditTime: 2022-01-13 22:40:15
  * @LastEditors: Li Xiang
  * @Description: 
  * @FilePath: \paper_notes\2d_object_detection_and_image_classfication.md
@@ -13,6 +13,10 @@
   - [ShuffleNet V2](#shufflenet-v2)
   - [ViT](#vit)
   - [DETR](#detr)
+  - [Rethinking ImageNet Pre-training](#rethinking-imagenet-pre-training)
+
+
+
 
 ## CenterNet
 
@@ -92,4 +96,18 @@ An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale
 
 ## DETR
 
+## Rethinking ImageNet Pre-training
+Rethinking ImageNet Pre-training
+
+[[abstract](https://arxiv.org/abs/1811.08883)]
+[[pdf](https://arxiv.org/pdf/1811.08883)]
+[[code](https://github.com)]
+
+研究了ImageNet预训练的作用，指出预训练权重在训练早期能加快模型收敛，但在有充足训练数据的前提下，预训练模型并不能提高最终的精度。
+
+在训练数据不足时，预训练模型仍有很大意义。
+
+数据是深度学习的基础。
+
+![](images/2022-01-13-22-35-23.png)
 
