@@ -1,6 +1,6 @@
 <!--
  * @Date: 2022-01-09 11:17:34
- * @LastEditTime: 2022-01-13 22:40:15
+ * @LastEditTime: 2022-01-15 11:25:53
  * @LastEditors: Li Xiang
  * @Description: 
  * @FilePath: \paper_notes\2d_object_detection_and_image_classfication.md
@@ -107,7 +107,8 @@ Rethinking ImageNet Pre-training
 
 在训练数据不足时，预训练模型仍有很大意义。
 
-数据是深度学习的基础。
+(数据是深度学习的基础)
+
 
 ![](images/2022-01-13-22-35-23.png)
 
