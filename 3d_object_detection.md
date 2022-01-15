@@ -1,6 +1,6 @@
 <!--
  * @Date: 2022-01-09 11:17:34
- * @LastEditTime: 2022-01-12 22:21:18
+ * @LastEditTime: 2022-01-15 21:27:20
  * @LastEditors: Li Xiang
  * @Description: 
  * @FilePath: \paper_notes\3d_object_detection.md
@@ -11,6 +11,8 @@
 - [3D目标物检测](#3d目标物检测)
   - [DETR3D](#detr3d)
   - [FCOS3D](#fcos3d)
+  - [Pseudo-LiDAR](#pseudo-lidar)
+  - [OFT](#oft)
 
 ## DETR3D
 
@@ -47,3 +49,41 @@ FCOS3D: Fully Convolutional One-Stage Monocular 3D Object Detection
 ![](images/2022-01-12-22-13-57.png)
 
 ![](images/2022-01-12-22-21-52.png)
+
+## Pseudo-LiDAR
+
+Pseudo-LiDAR from Visual Depth Estimation: Bridging the Gap in 3D Object Detection for Autonomous Driving
+
+[[abstract](https://arxiv.org/abs/1812.07179)]
+[[pdf](https://arxiv.org/pdf/1812.07179)]
+[[code](https://github.com/mileyan/pseudo_lidar)]
+
+认为深度图这种数据表示形式影响了3D目标检测的位置精度。
+
+将单目深度估计或双目相机的结果转换为点云形式，称为伪激光雷达，再利用点云目标检测算法进行处理。
+
+在具体实现中，也进行了2D-3D数据的融合(F-PointNet, AVOD)，精度得到了提高。
+
+![](images/2022-01-15-21-18-25.png)
+
+![](images/2022-01-15-21-17-43.png)
+
+## OFT
+
+Orthographic Feature Transform for Monocular 3D Object Detection
+
+[[abstract](https://arxiv.org/abs/1811.08188)]
+[[pdf](https://arxiv.org/pdf/1811.08188)]
+[[code](https://github.com/tom-roddick/oft)]
+
+提出一种图片特征转BEV的方法。
+
+将空间分为voxel，通过相机内外参计算每个voxel在图片中的投影，将覆盖的区域的2D特征求和作为voxel的特征，最终在BEV中进行目标检测。
+
+在KITTI 3D Object Detection中达到SOTA。
+
+![](images/2022-01-15-21-23-15.png)
+
+![](images/2022-01-15-21-19-58.png)
+
+![](images/2022-01-15-21-25-54.png)
