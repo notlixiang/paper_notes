@@ -1,6 +1,6 @@
 <!--
  * @Date: 2022-01-09 11:17:34
- * @LastEditTime: 2022-01-15 21:27:20
+ * @LastEditTime: 2022-01-16 20:33:34
  * @LastEditors: Li Xiang
  * @Description: 
  * @FilePath: \paper_notes\3d_object_detection.md
@@ -13,6 +13,7 @@
   - [FCOS3D](#fcos3d)
   - [Pseudo-LiDAR](#pseudo-lidar)
   - [OFT](#oft)
+  - [ImVoxelNet](#imvoxelnet)
 
 ## DETR3D
 
@@ -87,3 +88,22 @@ Orthographic Feature Transform for Monocular 3D Object Detection
 ![](images/2022-01-15-21-19-58.png)
 
 ![](images/2022-01-15-21-25-54.png)
+
+## ImVoxelNet
+ImVoxelNet: Image to Voxels Projection for Monocular and Multi-View General-Purpose 3D Object Detection
+
+[[abstract](https://arxiv.org/abs/2106.01178)]
+[[pdf](https://arxiv.org/pdf/2106.01178)]
+[[code](https://github.com/saic-vul/imvoxelnet)]
+
+多相机版本的OFT。
+
+BEV检测部分取消掉了Top-Down Network，改用3D Conv，从而理论上可以分辨Z方向的物体。
+
+(论文结果展示中的室内部分都只有地面目标物，略迷惑)
+
+![](images/2022-01-16-20-29-05.png)
+
+![](images/2022-01-16-20-33-33.png)
+
+![](images/2022-01-16-20-34-22.png)
