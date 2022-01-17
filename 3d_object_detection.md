@@ -1,6 +1,6 @@
 <!--
  * @Date: 2022-01-09 11:17:34
- * @LastEditTime: 2022-01-16 20:33:34
+ * @LastEditTime: 2022-01-17 21:58:57
  * @LastEditors: Li Xiang
  * @Description: 
  * @FilePath: \paper_notes\3d_object_detection.md
@@ -14,6 +14,7 @@
   - [Pseudo-LiDAR](#pseudo-lidar)
   - [OFT](#oft)
   - [ImVoxelNet](#imvoxelnet)
+  - [FISHING Net](#fishing-net)
 
 ## DETR3D
 
@@ -107,3 +108,20 @@ BEV检测部分取消掉了Top-Down Network，改用3D Conv，从而理论上可
 ![](images/2022-01-16-20-33-33.png)
 
 ![](images/2022-01-16-20-34-22.png)
+
+## FISHING Net
+FISHING Net: Future Inference of Semantic Heatmaps In Grids
+
+[[abstract](https://arxiv.org/abs/2006.09917)]
+[[pdf](https://arxiv.org/pdf/2006.09917)]
+[code]
+
+将多模态数据都在BEV中进行表示，再对BEV特征张量进行融合，融合方法可选pooling或基于softmax的类别优先。
+
+将固定时间间隔的多帧进行输入，并预测固定时间间隔后的多帧结果。
+
+相比对于所有特征拼接后做TOP-DOWN的卷积，这种融合方式可以使用同一个网络融合不同的传感器配置，具有较好的拓展性。
+
+![](images/2022-01-17-21-50-21.png)
+
+![](images/2022-01-17-21-56-23.png)
