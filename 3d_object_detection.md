@@ -1,6 +1,6 @@
 <!--
  * @Date: 2022-01-09 11:17:34
- * @LastEditTime: 2022-01-17 21:58:57
+ * @LastEditTime: 2022-01-18 21:56:38
  * @LastEditors: Li Xiang
  * @Description: 
  * @FilePath: \paper_notes\3d_object_detection.md
@@ -15,6 +15,7 @@
   - [OFT](#oft)
   - [ImVoxelNet](#imvoxelnet)
   - [FISHING Net](#fishing-net)
+  - [BEVDet](#bevdet)
 
 ## DETR3D
 
@@ -125,3 +126,25 @@ FISHING Net: Future Inference of Semantic Heatmaps In Grids
 ![](images/2022-01-17-21-50-21.png)
 
 ![](images/2022-01-17-21-56-23.png)
+
+## BEVDet
+
+BEVDet: High-performance Multi-camera 3D Object Detection in Bird-Eye-View
+
+[[abstract](https://arxiv.org/abs/2112.11790)]
+[[pdf](https://arxiv.org/pdf/2112.11790)]
+[[code](https://github.com/HuangJunJie2017/BEVDet)]
+
+总结了一种多目相机BEV感知的范式，用于工程中模块化网络设计，并提供了数据增强策略。
+
+将网络分成了图片特征编码，IMG2BEV转换，BEV编码，检测头四个部分，并给出了一些选型。
+
+在未提出新的模型结构的前提下，做出了nuscenes上的SOTA结果，具备较大的工程参考意义。
+
+(Github上只有个结果图，没放代码，看样子够呛能开源)
+
+![](images/2022-01-18-21-51-44.png)
+
+![](images/2022-01-18-21-53-06.png)
+
+![](images/2022-01-18-21-54-24.png)
