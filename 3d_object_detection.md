@@ -1,6 +1,6 @@
 <!--
  * @Date: 2022-01-09 11:17:34
- * @LastEditTime: 2022-01-18 21:56:38
+ * @LastEditTime: 2022-01-19 21:16:00
  * @LastEditors: Li Xiang
  * @Description: 
  * @FilePath: \paper_notes\3d_object_detection.md
@@ -15,6 +15,7 @@
   - [OFT](#oft)
   - [ImVoxelNet](#imvoxelnet)
   - [FISHING Net](#fishing-net)
+  - [Lift, Splat, Shoot](#lift-splat-shoot)
   - [BEVDet](#bevdet)
 
 ## DETR3D
@@ -126,6 +127,28 @@ FISHING Net: Future Inference of Semantic Heatmaps In Grids
 ![](images/2022-01-17-21-50-21.png)
 
 ![](images/2022-01-17-21-56-23.png)
+
+## Lift, Splat, Shoot
+
+Lift, Splat, Shoot: Encoding Images From Arbitrary Camera Rigs by Implicitly Unprojecting to 3D
+
+[[abstract](https://arxiv.org/abs/2008.05711)]
+[[pdf](https://arxiv.org/pdf/2008.05711)]
+[[code](https://github.com/nv-tlabs/lift-splat-shoot)]
+
+提出一种IMG2BEV的方法，通过预测图像中像素的深度分布，将2D信息转为3D，可用于3D目标检测，BEV语义分割，以及运动规划。
+
+是综合了OFT与pseudo-lidar的方法，为IMG到BEV特征转换提供了加权的同时保留了丰富信息。
+
+使用EffecientNet B0作为主干，在低分辨率下能够在Titan V上达到35Hz。
+
+(代码只开源了Car类别的BEV语义分割，其他类别的分割及运动规划任务部分暂未公开)
+
+![](images/2022-01-19-21-11-23.png)
+
+![](images/2022-01-19-21-16-30.png)
+
+![](images/2022-01-19-21-16-00.png)
 
 ## BEVDet
 
