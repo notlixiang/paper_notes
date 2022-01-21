@@ -1,6 +1,6 @@
 <!--
  * @Date: 2022-01-09 11:17:34
- * @LastEditTime: 2022-01-19 21:16:00
+ * @LastEditTime: 2022-01-21 19:36:36
  * @LastEditors: Li Xiang
  * @Description: 
  * @FilePath: \paper_notes\3d_object_detection.md
@@ -16,6 +16,7 @@
   - [ImVoxelNet](#imvoxelnet)
   - [FISHING Net](#fishing-net)
   - [Lift, Splat, Shoot](#lift-splat-shoot)
+  - [CaDNN](#cadnn)
   - [BEVDet](#bevdet)
 
 ## DETR3D
@@ -150,6 +151,19 @@ Lift, Splat, Shoot: Encoding Images From Arbitrary Camera Rigs by Implicitly Unp
 
 ![](images/2022-01-19-21-16-00.png)
 
+## CaDNN
+
+Categorical Depth Distribution Network for Monocular 3D Object Detection
+
+[[abstract](https://arxiv.org/abs/2103.01100)]
+[[pdf](https://arxiv.org/pdf/2103.01100)]
+[[code](https://github.com/TRAILab/CaDDN)]
+
+介绍一种BEV目标检测的方法，将图片提取特征，通过预测图片深度分布转换为3D网格特征，最终在BEV中进行目标检测。
+
+IMG2BEV部分与Lift-Splat-Shoot类似，只是将任务换成了3D目标检测。
+
+![](images/2022-01-21-19-34-28.png)
 ## BEVDet
 
 BEVDet: High-performance Multi-camera 3D Object Detection in Bird-Eye-View
