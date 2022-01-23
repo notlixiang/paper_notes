@@ -1,6 +1,6 @@
 <!--
  * @Date: 2022-01-23 12:05:34
- * @LastEditTime: 2022-01-23 12:06:43
+ * @LastEditTime: 2022-01-23 17:32:08
  * @LastEditors: Li Xiang
  * @Description: 
  * @FilePath: \paper_notes\backbones.md
@@ -11,6 +11,7 @@
 - [网络主干](#网络主干)
   - [ShuffleNet V2](#shufflenet-v2)
   - [ResNet 数学推导](#resnet-数学推导)
+  - [ResNeXt](#resnext)
   - [Rethinking ImageNet Pre-training](#rethinking-imagenet-pre-training)
 
 ## ShuffleNet V2
@@ -52,7 +53,26 @@ Identity Mappings in Deep Residual Networks
 
 ![](images/2022-01-20-22-08-49.png)
 
+## ResNeXt
+
+Aggregated Residual Transformations for Deep Neural Networks
+
+[[abstract](https://arxiv.org/abs/1611.05431)]
+[[pdf](https://arxiv.org/pdf/1611.05431)]
+[[code](https://github.com/facebookresearch/ResNeXt)]
+
+在ResNet基础上，提出block内部并行的模块数量(称为cardinality)，也是模型一个重要维度，并设计了新的综合了ResNet和Inception的网络结构，称为ResNeXt。
+
+本质上是将三层卷积的ResBlock中的中间一层换成了分组卷积，用以降低参数和计算量。
+
+(故事讲得很好，也确实有提升，但感觉主要是GroupConv的功劳，命名为ResNeXt略微牵强)
+
+![](images/2022-01-23-17-32-44.png)
+
+![](images/2022-01-23-17-25-32.png)
+
 ## Rethinking ImageNet Pre-training
+
 Rethinking ImageNet Pre-training
 
 [[abstract](https://arxiv.org/abs/1811.08883)]
