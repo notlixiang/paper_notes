@@ -1,6 +1,6 @@
 <!--
  * @Date: 2022-01-09 10:37:15
- * @LastEditTime: 2022-01-09 13:41:58
+ * @LastEditTime: 2022-01-23 12:07:46
  * @LastEditors: Li Xiang
  * @Description: 
  * @FilePath: \paper_notes\README.md
@@ -12,7 +12,8 @@
 
 ## 分类目录
 
+[网络主干](backbones.md)
+
+[2D目标物检测](2d_object_detection.md)
+
 [3D目标物检测](3d_object_detection.md)
-
-[2D目标物检测与图片分类](2d_object_detection_and_image_classfication.md)
-
