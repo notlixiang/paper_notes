@@ -1,6 +1,6 @@
 <!--
  * @Date: 2022-01-23 12:05:34
- * @LastEditTime: 2022-01-23 17:32:08
+ * @LastEditTime: 2022-01-24 22:29:29
  * @LastEditors: Li Xiang
  * @Description: 
  * @FilePath: \paper_notes\backbones.md
@@ -9,27 +9,12 @@
 # 网络主干
 
 - [网络主干](#网络主干)
-  - [ShuffleNet V2](#shufflenet-v2)
   - [ResNet 数学推导](#resnet-数学推导)
   - [ResNeXt](#resnext)
+  - [MobileNet](#mobilenet)
+  - [ShuffleNet V2](#shufflenet-v2)
   - [Rethinking ImageNet Pre-training](#rethinking-imagenet-pre-training)
-
-## ShuffleNet V2
-
-ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design
-
-[[abstract](https://arxiv.org/abs/1807.11164)]
-[[pdf](https://arxiv.org/pdf/1807.11164)]
-[[code](https://github.com/pytorch/vision/blob/5a315453da/torchvision/models/shufflenetv2.py)]
-
-文章指出，FLOPS并不能完全衡量网络推理速度，数据IO时的内存访问成本(MAC, Memory Access Cost)也很影响推理效率。
-
-基于对MAC的分析，提出四个设计高效CNN的实用指导规则：卷积层相等的输入输出通道数量能最小化内存访问成本(卷积尽量不变换通道数)，组卷积分组过多会增加内存访问成本(合理分组卷积)，网络碎片化会降低并行度(网络分支别太多)，逐元素(relu,add,bias等)操作FLOP低却带来大量内存访问成本(规避element wise操作)。
-
-在以上规则指导下，通过通道分离只对一半的通道做卷积，再和未卷积的另一半concat后做channel shuffle，设计了新的网络结构，有准又快。
-
-![](images/2022-01-11-22-50-44.png)
-
+  - [ViT](#vit)
 
 ## ResNet 数学推导
 
@@ -71,6 +56,45 @@ Aggregated Residual Transformations for Deep Neural Networks
 
 ![](images/2022-01-23-17-25-32.png)
 
+## MobileNet
+
+MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications
+
+[[abstract](https://arxiv.org/abs/1704.04861)]
+[[pdf](https://arxiv.org/pdf/1704.04861)]
+[[code](https://github.com/tensorflow/models/tree/master/research/slim/nets/mobilenet)]
+
+将深度可分离卷积大量应用到网络主干中，并由1x1卷积进行通道间信息流动，从而实现网络轻量化。
+
+对于3x3的卷积，使用MobileNet后网络计算量大约能降低到原来的1/9到1/8。
+
+能显著降低计算量与参数量，精度损失轻微。
+
+(同等FLOP下，DepthwiseConv需要更多的数据IO，用于加载特征以及权重。硬件平台未优化的话容易并发度受限，导致实际效率与FLOP不完全符合，使用时需要注意。)
+
+![](images/2022-01-24-22-11-44.png)
+
+![](images/2022-01-24-22-12-37.png)
+
+![](images/2022-01-24-22-22-26.png)
+
+## ShuffleNet V2
+
+ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design
+
+[[abstract](https://arxiv.org/abs/1807.11164)]
+[[pdf](https://arxiv.org/pdf/1807.11164)]
+[[code](https://github.com/pytorch/vision/blob/5a315453da/torchvision/models/shufflenetv2.py)]
+
+文章指出，FLOPS并不能完全衡量网络推理速度，数据IO时的内存访问成本(MAC, Memory Access Cost)也很影响推理效率。
+
+基于对MAC的分析，提出四个设计高效CNN的实用指导规则：卷积层相等的输入输出通道数量能最小化内存访问成本(卷积尽量不变换通道数)，组卷积分组过多会增加内存访问成本(合理分组卷积)，网络碎片化会降低并行度(网络分支别太多)，逐元素(relu,add,bias等)操作FLOP低却带来大量内存访问成本(规避element wise操作)。
+
+在以上规则指导下，通过通道分离只对一半的通道做卷积，再和未卷积的另一半concat后做channel shuffle，设计了新的网络结构，有准又快。
+
+![](images/2022-01-11-22-50-44.png)
+
+
 ## Rethinking ImageNet Pre-training
 
 Rethinking ImageNet Pre-training
@@ -88,3 +112,24 @@ Rethinking ImageNet Pre-training
 
 ![](images/2022-01-13-22-35-23.png)
 
+## ViT
+
+An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale
+
+[[abstract](https://arxiv.org/abs/2010.11929)]
+[[pdf](https://arxiv.org/pdf/2010.11929)]
+[[code](https://github.com/google-research/vision_transformer)]
+
+将transformer结构应用到图片分类任务中：将一整张图片分解为若干个图片块，每个patch展开成一维，再通过线性层生成每个图片块的token，像单词序列一样送入transformer，最终在transformer的0号位置进行输出，通过MLP解码出分类结果。
+
+相比其他对比方法，能够达到更高的精度，但需要更多的数据与更多的训练量。
+
+可视化结果表明，token中有效编码了图片块中的低维特征，位置编码学到了图片块间的二维相对位置关系，Transformer关注的尺度(感受野)随层数的增加从近到远。
+
+![](images/2022-01-09-21-30-03.png)
+
+![](images/2022-01-09-22-02-22.png)
+
+![](images/2022-01-09-22-02-40.png)
+
+![](images/2022-01-09-21-38-39.png)

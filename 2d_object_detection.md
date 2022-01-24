@@ -10,7 +10,6 @@
 - [2D目标物检测与图片分类](#2d目标物检测与图片分类)
   - [CenterNet](#centernet)
   - [FCOS](#fcos)
-  - [ViT](#vit)
 
 
 ## CenterNet
@@ -51,25 +50,3 @@ FCOS: Fully Convolutional One-Stage Object Detection
 
 ![](images/2022-01-09-21-05-21.png)
 
-
-## ViT
-
-An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale
-
-[[abstract](https://arxiv.org/abs/2010.11929)]
-[[pdf](https://arxiv.org/pdf/2010.11929)]
-[[code](https://github.com/google-research/vision_transformer)]
-
-将transformer结构应用到图片分类任务中：将一整张图片分解为若干个图片块，每个patch展开成一维，再通过线性层生成每个图片块的token，像单词序列一样送入transformer，最终在transformer的0号位置进行输出，通过MLP解码出分类结果。
-
-相比其他对比方法，能够达到更高的精度，但需要更多的数据与更多的训练量。
-
-可视化结果表明，token中有效编码了图片块中的低维特征，位置编码学到了图片块间的二维相对位置关系，Transformer关注的尺度(感受野)随层数的增加从近到远。
-
-![](images/2022-01-09-21-30-03.png)
-
-![](images/2022-01-09-22-02-22.png)
-
-![](images/2022-01-09-22-02-40.png)
-
-![](images/2022-01-09-21-38-39.png)
