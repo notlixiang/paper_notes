@@ -1,6 +1,6 @@
 <!--
  * @Date: 2022-01-23 12:05:34
- * @LastEditTime: 2022-01-24 22:29:29
+ * @LastEditTime: 2022-01-26 20:49:18
  * @LastEditors: Li Xiang
  * @Description: 
  * @FilePath: \paper_notes\backbones.md
@@ -12,6 +12,7 @@
   - [ResNet 数学推导](#resnet-数学推导)
   - [ResNeXt](#resnext)
   - [MobileNet](#mobilenet)
+  - [MobileNetV2](#mobilenetv2)
   - [ShuffleNet V2](#shufflenet-v2)
   - [Rethinking ImageNet Pre-training](#rethinking-imagenet-pre-training)
   - [ViT](#vit)
@@ -77,6 +78,28 @@ MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applicatio
 ![](images/2022-01-24-22-12-37.png)
 
 ![](images/2022-01-24-22-22-26.png)
+
+## MobileNetV2
+
+MobileNetV2: Inverted Residuals and Linear Bottlenecks
+
+[[abstract](https://arxiv.org/abs/1801.04381)]
+[[pdf](https://arxiv.org/pdf/1801.04381)]
+[[code](https://github.com/pytorch/vision/blob/6db1569c89094cf23f3bc41f79275c45e9fcb3f3/torchvision/models/mobilenet.py#L77)]
+
+在MobileNet的基础上，提出倒残差结构，从而进一步提高MobileNet的效果。
+
+区别于bottleneck-resblock的降低计算量的降维-升维策略，此论文提出低维空间的Relu会造成信息损失，故仅在倒残差的高维数据中使用relu，去掉最后一个relu。
+
+效果相比MobileNetV1有明显提高。
+
+(倒残差的结构很经典，也可看做是用DepthWiseConv改造了ResNet。但其实PointWiseConv也可前移到低维，再做DWConv升降维，效果能更好(ConvNext))
+
+![](images/2022-01-26-20-38-25.png)
+
+![](images/2022-01-26-20-35-10.png)
+
+![](images/2022-01-26-20-40-44.png)
 
 ## ShuffleNet V2
 
