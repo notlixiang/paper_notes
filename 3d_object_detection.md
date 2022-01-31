@@ -1,6 +1,6 @@
 <!--
  * @Date: 2022-01-09 11:17:34
- * @LastEditTime: 2022-01-21 19:36:36
+ * @LastEditTime: 2022-01-31 10:17:33
  * @LastEditors: Li Xiang
  * @Description: 
  * @FilePath: \paper_notes\3d_object_detection.md
@@ -16,7 +16,7 @@
   - [ImVoxelNet](#imvoxelnet)
   - [FISHING Net](#fishing-net)
   - [Lift, Splat, Shoot](#lift-splat-shoot)
-  - [CaDNN](#cadnn)
+  - [CaDDN](#caddn)
   - [BEVDet](#bevdet)
 
 ## DETR3D
@@ -151,7 +151,7 @@ Lift, Splat, Shoot: Encoding Images From Arbitrary Camera Rigs by Implicitly Unp
 
 ![](images/2022-01-19-21-16-00.png)
 
-## CaDNN
+## CaDDN
 
 Categorical Depth Distribution Network for Monocular 3D Object Detection
 
