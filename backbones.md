@@ -1,6 +1,6 @@
 <!--
  * @Date: 2022-01-23 12:05:34
- * @LastEditTime: 2022-01-26 20:49:18
+ * @LastEditTime: 2022-02-09 19:09:09
  * @LastEditors: Li Xiang
  * @Description: 
  * @FilePath: \paper_notes\backbones.md
@@ -11,6 +11,7 @@
 - [网络主干](#网络主干)
   - [ResNet 数学推导](#resnet-数学推导)
   - [ResNeXt](#resnext)
+  - [DenseNet](#densenet)
   - [MobileNet](#mobilenet)
   - [MobileNetV2](#mobilenetv2)
   - [ShuffleNet V2](#shufflenet-v2)
@@ -56,6 +57,24 @@ Aggregated Residual Transformations for Deep Neural Networks
 ![](images/2022-01-23-17-32-44.png)
 
 ![](images/2022-01-23-17-25-32.png)
+
+## DenseNet
+
+Densely Connected Convolutional Networks
+
+[[abstract](https://arxiv.org/abs/1608.06993)]
+[[pdf](https://arxiv.org/pdf/1608.06993)]
+[[code](https://github.com/liuzhuang13/DenseNet)]
+
+另一种跳层机制，通过特征重用(concat)替代特征相加(ResNet)，从而达到与ResNet类似的降低收敛难度的效果。
+
+网络主干分为若干DenseBlock，Block中的每层均直接获得之前所有的特征，实现shortcut。
+
+能达到比ResNet更少的计算量与参数量，但由于分支过多且每层的参数量较少，导致并发度不够高，GPU友好度不如ResNet。
+
+![](images/2022-02-09-18-56-49.png)
+
+![](images/2022-02-09-19-04-46.png)
 
 ## MobileNet
 
