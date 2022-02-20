@@ -1,6 +1,6 @@
 <!--
  * @Date: 2022-01-09 11:17:34
- * @LastEditTime: 2022-01-23 12:07:37
+ * @LastEditTime: 2022-02-20 14:31:36
  * @LastEditors: Li Xiang
  * @Description: 
  * @FilePath: \paper_notes\2d_object_detection.md
@@ -10,6 +10,7 @@
 - [2D目标物检测与图片分类](#2d目标物检测与图片分类)
   - [CenterNet](#centernet)
   - [FCOS](#fcos)
+  - [Deformable-DETR](#deformable-detr)
 
 
 ## CenterNet
@@ -50,3 +51,23 @@ FCOS: Fully Convolutional One-Stage Object Detection
 
 ![](images/2022-01-09-21-05-21.png)
 
+
+## Deformable-DETR
+
+Deformable DETR: Deformable Transformers for End-to-End Object Detection
+
+[[abstract](https://arxiv.org/abs/2010.04159)]
+[[pdf](https://arxiv.org/pdf/2010.04159)]
+[[code](https://github.com/fundamentalvision/Deformable-DETR)]
+
+一种基于DETR的目标物检测方法，有效提高ViT支撑的特征图分辨率，并提高训练效率。
+
+相比原版DETR中每个query对特征图各像素都做cross-attention，Deformable-DETR的query生成若干采样位置，并从特征图中通过双线性插值离散的抽取特征，并持续调整采样点。
+
+方法很新颖，但计算效率及精度相比SOTA并未有较大提升，主要优点还是在于训练时间上；而且离散采样存在大量的随机内存访问，对于嵌入式平台的部署可能不友好。
+
+![](images/2022-02-20-14-14-17.png)
+
+![](images/2022-02-20-14-18-21.png)
+
+![](images/2022-02-20-14-28-48.png)
