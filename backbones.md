@@ -1,6 +1,6 @@
 <!--
  * @Date: 2022-01-23 12:05:34
- * @LastEditTime: 2022-02-09 19:09:09
+ * @LastEditTime: 2022-06-20 22:32:37
  * @LastEditors: Li Xiang
  * @Description: 
  * @FilePath: \paper_notes\backbones.md
@@ -32,7 +32,7 @@ Identity Mappings in Deep Residual Networks
 
 另外，对ResNet中Conv,BN,Act层的排布顺序进行了探索与优化，提出了更优的pre-activation结构。
 
-(经典作品，数学推导很漂亮，必须精度的论文)
+(经典作品，数学推导很漂亮，必须精读的论文)
 
 ![](images/2022-01-20-22-04-08.png)
 
