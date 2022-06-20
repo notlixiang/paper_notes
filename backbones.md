@@ -1,6 +1,6 @@
 <!--
  * @Date: 2022-01-23 12:05:34
- * @LastEditTime: 2022-06-20 22:32:37
+ * @LastEditTime: 2022-06-20 22:34:21
  * @LastEditors: Li Xiang
  * @Description: 
  * @FilePath: \paper_notes\backbones.md
@@ -132,7 +132,7 @@ ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design
 
 基于对MAC的分析，提出四个设计高效CNN的实用指导规则：卷积层相等的输入输出通道数量能最小化内存访问成本(卷积尽量不变换通道数)，组卷积分组过多会增加内存访问成本(合理分组卷积)，网络碎片化会降低并行度(网络分支别太多)，逐元素(relu,add,bias等)操作FLOP低却带来大量内存访问成本(规避element wise操作)。
 
-在以上规则指导下，通过通道分离只对一半的通道做卷积，再和未卷积的另一半concat后做channel shuffle，设计了新的网络结构，有准又快。
+在以上规则指导下，通过通道分离只对一半的通道做卷积，再和未卷积的另一半concat后做channel shuffle，设计了新的网络结构，又准又快。
 
 ![](images/2022-01-11-22-50-44.png)
 
