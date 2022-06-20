@@ -1,6 +1,6 @@
 <!--
  * @Date: 2022-01-09 11:17:34
- * @LastEditTime: 2022-01-31 10:17:33
+ * @LastEditTime: 2022-06-20 22:31:29
  * @LastEditors: Li Xiang
  * @Description: 
  * @FilePath: \paper_notes\3d_object_detection.md
@@ -18,6 +18,7 @@
   - [Lift, Splat, Shoot](#lift-splat-shoot)
   - [CaDDN](#caddn)
   - [BEVDet](#bevdet)
+  - [Tesla AI Day](#tesla-ai-day)
 
 ## DETR3D
 
@@ -185,3 +186,23 @@ BEVDet: High-performance Multi-camera 3D Object Detection in Bird-Eye-View
 ![](images/2022-01-18-21-53-06.png)
 
 ![](images/2022-01-18-21-54-24.png)
+
+## Tesla AI Day
+Tesla AI Day
+[[link](https://www.youtube.com/watch?v=j0z4FweCy4M&ab_channel=Tesla)]
+
+2021年8月19日的AI Day上，Tesla在其中介绍了其基于纯视觉的感知系统。
+
+其模型部分主要具有以下特点：多任务共享主干(RegNet+BiFPN)，利用transformer互注意力将主干提取的多相机图像特征转换到BEV表示中(Vector Space)，并在时间维度进行融合。
+
+另一张示意图对Tesla感知模型的transformer构造原理进行了更详细的解析，附上medium链接供参考原文。
+
+据笔者所知，Tesla是第一家公开利用transformer实现自动驾驶bev感知方案的厂商(当然别的厂商也没公开过)，后续在学界和业界都引起了一阵transformer bev感知的风潮(nuscenes榜单上vision track的top都是bev方案，大部分都与transformer相关)。
+
+更多讨论详见[[我的博客](https://notlixiang.github.io/tesla-ai-day/)]
+
+
+![](images/2022-06-20-21-27-53.png)
+<!-- ![](images/2022-06-20-21-27-19.png) -->
+![](images/2022-06-20-21-21-02.png)
+[source](https://medium.com/towards-data-science/monocular-bev-perception-with-transformers-in-autonomous-driving-c41e4a893944a)
